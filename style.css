@@ -59,4 +59,44 @@ body{
 
 
 }
-  
+
+.number, .empty{
+  background-color: #eaedef;
+}
+
+.number, .operator{
+  cursor: pointer;
+}
+
+.operator:active, .number:active{
+  font-size: 20px;
+}
+
+.operator:focus, .number:focus, .empty:focus{
+  outline: 0;
+}
+
+button:nth-child(4){
+  font-size: 20px;
+  background-color: yellowgreen;
+}
+
+button:nth-child(8){
+  font-size: 20px;
+  background-color: rgb(134, 22, 78);
+}
+
+button:nth-child(12){
+  font-size: 20px;
+  background-color: rgb(217, 255, 0);
+}
+button:nth-child(16){
+  font-size: 20px;
+  background-color: rgb(101, 4, 212);
+}
+
+button:nth-child(20){
+  font-size: 20px;
+  background-color: rgb(44, 157, 233);
+}
+
