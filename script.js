@@ -26,8 +26,14 @@ function getFormattedNumber(num){
   return value;
 }
 
-printOutput("98765433567");
+
 function reverNumberFormat(num){
   return Number(num.replace(/,/g,''));
 }
-alert(reverNumberFormat(getOutput()));
+
+var operator = document.getElementsByClassName("operator")
+for(var i =0;i<operator.length;i++){
+  operator[i].addEventListener('click',function(){
+    alert("The operator clicked:"+this.id);
+  });
+}
