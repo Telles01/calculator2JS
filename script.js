@@ -31,14 +31,38 @@ function reverNumberFormat(num){
   return Number(num.replace(/,/g,''));
 }
 
-var operator = document.getElementsByClassName("operator")
+var operator = document.getElementsByClassName("operator");
 for(var i =0;i<operator.length;i++){
   operator[i].addEventListener('click',function(){
-    
+    if(this.id=="clear"){
+      printHistory("");
+      printOutput("");
+    }
+    else if(this.id=="backspace"){
+      var output=reverNumberFormat(getOutput()).toString();
+      if(output){//if output has a value 
+        output= output.substr(0,output.length-1);
+        printOutput(output);
+
+      }
+    }
+    else {
+      var output=getOutput();
+      var history=getHistoty();
+          if(output!=""){
+            output=reverNumberFormat(output);
+            history=history+output;
+            if(this.id=="="){
+              var result=eval(history);
+              printOutput(result);
+              printHistory("")
+            }
+          }
+    }
   });
 }
 
-var number = document.getElementsByClassName("number")
+var number = document.getElementsByClassName("number");
 for(var i =0;i<number.length;i++){
   number[i].addEventListener('click',function(){
     var output=reverNumberFormat(getOutput());
